@@ -1,0 +1,86 @@
+version: '3.8'
+# version: '3.7'
+
+services:
+  composer:
+    image: composer
+    command: composer install
+    environment:
+      - COMPOSER_CACHE_DIR=/app/var/cache/composer
+    volumes:
+      - .:/app
+
+  php:
+    container_name: php-pg
+    build: .conf/php/
+    restart: always
+    volumes:
+      - .:/app
+      - .conf/php/conf.d/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+      - .conf/php/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
+      - .conf/php/conf.d/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+    working_dir: /app
+    networks:
+      - network_mynet
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - 8000:80
+    volumes:
+      - .:/app
+      - ./var/log/nginx:/var/log/nginx
+      - .conf/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - network_mynet
+  
+# //////////////////////////////
+#   Mysqldb:
+#     container_name: mydb
+#     image: mysql
+#     command: --default-authentication-plugin=mysql_native_password
+#     ports:
+#       - 3306:3306
+#     restart: always
+#     environment:
+#       MYSQL_ROOT_PASSWORD: root
+#       MYSQL_DATABASE: ratedb
+#       MYSQL_USER: admin
+#       MYSQL_PASSWORD: Admin456
+#     volumes:
+#       # - "my-data:/var/lib/mysql"
+#       - ".conf/mysql/mysql-dump.sql:/docker-entrypoint-initdb.d/1.sql"
+#     networks:
+#       - network_mynet
+
+# volumes:
+#   my-data:
+# //////////////////////////////
+
+# //////////////////////////////
+  postgres-db:
+    # build:
+    #   context: docker/db
+    container_name: pgdb
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=Admin456
+      - POSTGRES_DB=ratedb
+      - TZ=Europe/Stockholm
+    volumes:
+      - db:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+    networks:
+      - network_mynet
+
+volumes:
+  db:
+    driver: local
+# ///////////////////////////////
+  
+networks:
+  network_mynet:
