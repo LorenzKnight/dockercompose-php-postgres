@@ -1,5 +1,5 @@
 # Clean Docker with PHP
-Docker with PHP 7.4 fpm, Nginx, Composer, PhpUnit and MySqlDB
+Docker with PHP 7.4 fpm, Nginx, Composer, PhpUnit and postgresDB
 
 ## Starting app
 docker-compose up -d
@@ -7,13 +7,13 @@ or
 docker-compose up --build --force-recreate -d
 
 ## Main page - localhost
-http://localhost:8080/
+http://localhost:8000/
 
 ## Php info
-http://localhost:8080/php_info.php
+http://localhost:8000/php_info.php
 
 ## Xdebug info
-http://localhost:8080/xdebug_info.php
+http://localhost:8000/xdebug_info.php
 
 ## Running tests
 docker-compose run php vendor/bin/phpunit
@@ -22,9 +22,9 @@ docker-compose run php vendor/bin/phpunit
 change namespace "Example" in composer.json line 7 for your project name
 
 ## Connecting to MySql
-1. User: user
-2. Passwd: test-pass
-3. Port 3306
+1. User: admin
+2. Passwd: Admin456
+3. Port 5432
 4. DB: ratedb
 
 ## Using PhpUnit in PhpStorm

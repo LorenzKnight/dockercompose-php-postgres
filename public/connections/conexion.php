@@ -1,5 +1,5 @@
 <?php
-$conn_host = ' host=127.0.0.1';
+$conn_host = ' host=localhost';
 $conn_port = ' port=5432';
 $conn_dbname = ' dbname=ratedb';
 $conn_user = ' user=admin';
