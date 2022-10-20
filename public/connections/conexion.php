@@ -11,7 +11,7 @@ if ($db == false) {
   exit();
 }
 
-//simple check
+// simple check
 // $conn = pg_connect($connStr);
 // $result = pg_query($conn, "select * from users");
 // var_dump(pg_fetch_all($result));
