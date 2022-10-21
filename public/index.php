@@ -1,8 +1,6 @@
 <?php
-$realpath = realpath(dirname(__FILE__));
-require_once('connections/conexion.php');
-
-// require_once('logic/index_be.php');
+// require_once('connections/conexion.php');
+require_once('logic/index_be.php');
 ?>
 <html>
 <head>
@@ -13,7 +11,12 @@ require_once('connections/conexion.php');
 </head>
 <body>
     <?php 
-     
+        $user = u_all_info();
+
+        foreach($user as $item)
+        {
+        echo $item['name'];
+        }
     ?>
 </body>
 </html>

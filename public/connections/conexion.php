@@ -11,10 +11,17 @@ if ($sql == false) {
   exit();
 }
 
-// simple check
-$query = "select * from users";
-$sql = pg_query($query);
-$result = pg_fetch_all($sql);
+if (is_file("inc/functions.php")) 
+    include("inc/functions.php"); 
+else
+{
+    include("./inc/functions.php");
+}
 
-var_dump($result);
+// simple check
+// $query = "select * from users";
+// $sql = pg_query($query);
+// $result = pg_fetch_all($sql);
+
+// var_dump($result);
 ?>

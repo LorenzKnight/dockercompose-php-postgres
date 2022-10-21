@@ -1,4 +1,7 @@
 <?php require_once('./connections/conexion.php');?>
+<?php
+    
+?>
 <!-- Login -->
 <?php
 //     if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "formsignin")) 
