@@ -1,17 +1,20 @@
 <?php
-$conn_host = ' host=pgdb'; //container's name instead for "localhost" 
-$conn_port = ' port=5432';
-$conn_dbname = ' dbname=ratedb';
-$conn_user = ' user=admin';
-$conn_pass = ' password=Admin456';
+$conn_host    = ' host=pgdb'; //container's name instead for "localhost" 
+$conn_port    = ' port=5432';
+$conn_dbname  = ' dbname=ratedb';
+$conn_user    = ' user=admin';
+$conn_pass    = ' password=Admin456';
 
-$db = pg_connect($conn_host . $conn_port . $conn_dbname . $conn_user . $conn_pass);
-if ($db == false) {
+$sql = pg_connect($conn_host . $conn_port . $conn_dbname . $conn_user . $conn_pass);
+if ($sql == false) {
   echo "sql connection error!";
   exit();
 }
 
 // simple check
-$result = pg_query($db, "select * from users");
-var_dump(pg_fetch_all($result));
+$query = "select * from users";
+$sql = pg_query($query);
+$result = pg_fetch_all($sql);
+
+var_dump($result);
 ?>
