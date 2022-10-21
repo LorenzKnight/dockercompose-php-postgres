@@ -1,5 +1,5 @@
 <?php
-$conn_host = ' host=localhost';
+$conn_host = ' host=pgdb'; //container's name instead for "localhost" 
 $conn_port = ' port=5432';
 $conn_dbname = ' dbname=ratedb';
 $conn_user = ' user=admin';
@@ -12,7 +12,6 @@ if ($db == false) {
 }
 
 // simple check
-// $conn = pg_connect($connStr);
-// $result = pg_query($conn, "select * from users");
-// var_dump(pg_fetch_all($result));
+$result = pg_query($db, "select * from users");
+var_dump(pg_fetch_all($result));
 ?>
