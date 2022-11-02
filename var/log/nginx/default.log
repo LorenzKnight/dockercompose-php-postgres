@@ -1490,3 +1490,7 @@
 172.25.0.1 - - [21/Oct/2022:19:44:04 +0000] "GET /css/index.css HTTP/1.1" 200 341 "http://localhost:8000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
 172.25.0.1 - - [21/Oct/2022:19:44:05 +0000] "GET / HTTP/1.1" 200 341 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
 172.25.0.1 - - [21/Oct/2022:19:44:05 +0000] "GET /css/index.css HTTP/1.1" 200 341 "http://localhost:8000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+172.25.0.1 - - [21/Oct/2022:20:10:50 +0000] "GET / HTTP/1.1" 200 341 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+172.25.0.1 - - [21/Oct/2022:20:10:50 +0000] "GET /css/index.css HTTP/1.1" 200 341 "http://localhost:8000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+172.20.0.1 - - [21/Oct/2022:20:42:19 +0000] "GET / HTTP/1.1" 200 341 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
+172.20.0.1 - - [21/Oct/2022:20:42:19 +0000] "GET /css/index.css HTTP/1.1" 200 341 "http://localhost:8000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
